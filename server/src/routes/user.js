@@ -57,16 +57,10 @@ router.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, f
     });
 }); });
 router.get("/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, user;
+    var user;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                id = req.params.id;
-                return [4 /*yield*/, prisma.user.findFirst({
-                        where: {
-                            id: id
-                        }
-                    })];
+            case 0: return [4 /*yield*/, prisma.user.findMany()];
             case 1:
                 user = _a.sent();
                 return [2 /*return*/, res.json({
@@ -108,4 +102,3 @@ router.post("/", function (req, res) { return __awaiter(void 0, void 0, void 0, 
 //   .put('/service', [auth, service], updateServiceProfile)
 //   .post('/address', auth, upsertAddress)
 exports["default"] = router;
-//# sourceMappingURL=user.js.map

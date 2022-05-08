@@ -16,12 +16,17 @@ router.get("/", async (req, res) => {
   });
 });
 router.get("/:id", async (req, res) => {
-  const users = await prisma.user.findMany();
+  const { id } = req.params;
+  const user = await prisma.user.findFirst({
+    where: {
+      id: id,
+    },
+  });
 
   return res.json({
     status: 400,
     body: {
-      users,
+      user,
     },
   });
 });

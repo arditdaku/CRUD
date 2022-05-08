@@ -14,4 +14,3 @@ exports.__esModule = true;
 exports.user = void 0;
 var user_1 = require("./user");
 __createBinding(exports, user_1, "default", "user");
-//# sourceMappingURL=index.js.map
